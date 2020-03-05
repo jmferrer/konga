@@ -15,7 +15,7 @@ data:
   DB_USER: {{ .Values.config.db_user }}
   DB_PASSWORD: {{ .Values.config.db_password }}
   DB_DATABASE: {{ default "konga_database" .Values.config.db_database }}
-  NODE_TLS_REJECT_UNAUTHORIZED: {{ default "1" .Values.config.node_tls_reject_unauthorized}}
+  NODE_TLS_REJECT_UNAUTHORIZED: "{{ default 1 .Values.config.node_tls_reject_unauthorized }}"
   {{- end }}
 
   {{- if .Values.ldap }}
